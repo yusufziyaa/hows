@@ -8,11 +8,14 @@ export default function Page() {
         <Box>
             <VStack gap={5} padding="100px">
                 <Heading size="4xl">{id}</Heading>
-                <Text>Written by AMOGUS</Text>
-                <Image width={"30%"} src="https://img.piri.net/mnresize/840/-/resim/imagecrop/2021/12/19/10/43/resized_38709-985ac26efwfwfwfw.jpg" alt="Your regular image" />
+                <Box display="flex" >
+                    <Text marginRight="3px">Written by</Text>
+                    <Text fontWeight="bold">your favourite author you read every single day in the morning</Text>
+                </Box>
+                <Image width={"30%"} src="https://st.focusedcollection.com/14026668/i/1800/focused_258969132-stock-photo-worried-sad-man-sitting-sofa.jpg" alt="Your regular image" />
                 <Divider width="50%" />
                 <Container fontSize="17px" fontFamily={"serif"} textAlign={"center"}>
-                    PEAKY FOKIN BLINDERS INDEED
+                    this is a text
                 </Container>
             </VStack>
         </Box>
