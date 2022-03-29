@@ -1,36 +1,35 @@
-import { Grid, GridItem, HStack, VStack } from "@chakra-ui/react"
+import { Box, Grid, GridItem, HStack, SimpleGrid, VStack } from "@chakra-ui/react"
 import Article from "./article"
+import SmallComp from "./smallcomp"
 
-function gridItem({colStart=1,rowStart=1,colSpan=1,rowSpan=1}) {
-    return (
-        <GridItem colStart={colStart} rowStart={rowStart} colSpan={colSpan} rowSpan={rowSpan}>
-            <Article />
-        </GridItem> 
-    )
-}
 
-function Discover(){
+function Discover() {
+    var news = ["hm", "hm again","mrblar","hayat nası","e öyle işte","gayet basarili"]
+    var shorts = ["nasreddin hoca, nasretmedin hoca", "😏", "hm"]
     return (
-        <Grid maxWidth="75%" h="800px" gap={6} p="5" templateRows="repeat(3,1fr)" templateColumns="repeat(3,1fr)" >
-            <GridItem colStart={1} rowStart={1} colSpan={1} rowSpan={2}>
+        <VStack p="10">
+            <HStack width="90%">
                 <Article />
-            </GridItem>
-            <GridItem rounded="md" colStart={1} rowStart={3} colSpan={1} rowSpan={1}>
-                <Article noimage />
-            </GridItem>
-            <GridItem colStart={2} rowStart={1} colSpan={1} rowSpan={1}>
-                <Article noimage />
-            </GridItem>
-            <GridItem colStart={2} rowStart={2} colSpan={1} rowSpan={1}>
-                <Article noimage />
-            </GridItem>
-            <GridItem colStart={2} rowStart={3} colSpan={1} rowSpan={1}>
-                <Article noimage />
-            </GridItem>
-            <GridItem colStart={3} rowStart={1} colSpan={1} rowSpan={3}>
-                <Article />
-            </GridItem>
-        </Grid>
+                <Grid width="40%" gap={1} height="100%" templateRows="repeat(3,1fr)">
+                    <GridItem rowStart={1}>
+                        <SmallComp title={shorts[0]} />
+                    </GridItem>
+                    <GridItem rowStart={2}>
+                        <SmallComp title={shorts[1]} />
+                    </GridItem>
+                    <GridItem rowStart={3}>
+                        <SmallComp title={shorts[2]} />
+                    </GridItem>
+                </Grid>
+            </HStack>
+            <Box display="flex" justifyContent={"center"}>
+                <VStack width="50%" p="10" gap={4}>
+                    {news.map((n, i) => (
+                        <Article link={n} title={n} key={i} />
+                    ))}
+                </VStack>
+            </Box>
+        </VStack>
     )
 }
 
