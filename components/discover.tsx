@@ -5,7 +5,7 @@ import SmallComp from "./smallcomp"
 
 function Discover() {
     var news = ["hm", "hm again","mrblar","hayat nası","e öyle işte","gayet basarili"]
-    var shorts = ["nasreddin hoca, nasretmedin hoca", "😏", "hm"]
+    var shorts = ["yavuz yavuz", "😏", "hm"]
     return (
         <VStack p="10">
             <HStack width="90%">
